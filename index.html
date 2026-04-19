@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Credit Solutions — Aon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #042C53;
+      --navy-mid: #185FA5;
+      --navy-light: #B5D4F4;
+      --navy-pale: #E6F1FB;
+      --teal: #0F6E56;
+      --teal-light: #E1F5EE;
+      --amber: #BA7517;
+      --amber-light: #FAEEDA;
+      --coral: #993C1D;
+      --coral-light: #FAECE7;
+      --purple: #534AB7;
+      --purple-light: #EEEDFE;
+      --green: #3B6D11;
+      --green-light: #EAF3DE;
+      --text: #1a1a2e;
+      --text-muted: #5a6072;
+      --border: rgba(0,0,0,0.09);
+      --white: #ffffff;
+      --bg: #f7f8fc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(4,44,83,0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+    .nav-brand span { color: var(--navy-light); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--navy-light);
+      color: var(--navy) !important;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-weight: 500 !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #042C53 0%, #0C447C 55%, #185FA5 100%);
+      color: #fff;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(181,212,244,0.18);
+      border: 1px solid rgba(181,212,244,0.3);
+      color: var(--navy-light);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.72);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #fff;
+      color: var(--navy);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 400;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .stat-item {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--navy-light);
+      display: block;
+    }
+    .stat-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 5rem 0; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-mid);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    .section-lead {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .section-header { margin-bottom: 3rem; }
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── WHAT IS IT ── */
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .what-visual {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .what-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(24,95,165,0.3);
+    }
+    .what-visual-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy-light);
+      margin-bottom: 1.5rem;
+    }
+    .what-visual-equation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .eq-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-align: center;
+      min-width: 80px;
+    }
+    .eq-box-label { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; }
+    .eq-box-val { font-size: 14px; color: #fff; font-weight: 500; margin-top: 4px; }
+    .eq-op { color: var(--navy-light); font-size: 20px; font-weight: 300; }
+    .eq-result {
+      background: var(--navy-mid);
+      border-color: transparent;
+    }
+    .eq-result .eq-box-val { color: #fff; }
+    .what-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    .what-text p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+
+    /* ── RISK CARDS ── */
+    .risks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .risk-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .risk-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .risk-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .risk-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 8px; color: var(--navy); }
+    .risk-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+    /* ── HOW AON HELPS ── */
+    .helps-section { background: var(--navy-pale); }
+    .helps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .helps-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(24,95,165,0.12);
+    }
+    .helps-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy-light);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .helps-card h3 { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .helps-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+    /* ── PROCESS ── */
+    .process-list { display: flex; flex-direction: column; gap: 0; max-width: 720px; }
+    .process-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .step-aside { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .step-line { width: 1px; height: 40px; background: var(--border); margin: 6px 0; }
+    .process-step:last-child .step-line { display: none; }
+    .step-body { padding-bottom: 1.5rem; }
+    .step-body h3 { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .step-body p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+    .step-tag {
+      display: inline-block;
+      background: var(--navy-pale);
+      color: var(--navy-mid);
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .who-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .who-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    .who-card h3 { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, #042C53 0%, #185FA5 100%);
+      color: #fff;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+    }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #020f1e;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: underline; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero > * { animation: fadeUp 0.6s ease both; }
+    .hero .hero-eyebrow { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.2s; }
+    .hero p  { animation-delay: 0.3s; }
+    .hero-btns { animation-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .what-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Aon <span>|</span> Trade Credit</div>
+  <ul class="nav-links">
+    <li><a href="#what">Overview</a></li>
+    <li><a href="#risks">Coverage</a></li>
+    <li><a href="#how-aon">How Aon Helps</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Aon — Risk & Insurance Solutions</div>
+  <h1>Trade Credit Solutions<br>for a Confident Tomorrow</h1>
+  <p>Protect your accounts receivable from buyer default, insolvency, and political risk — so you can extend credit and grow without fear.</p>
+  <div class="hero-btns">
+    <a href="#what" class="btn-primary">Learn More</a>
+    <a href="#contact" class="btn-outline">Talk to a Specialist</a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">~3%</span>
+    <div class="stat-desc">Average bad debt rate for uninsured businesses</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">90%</span>
+    <div class="stat-desc">Of receivables losses covered under a standard policy</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">50+</span>
+    <div class="stat-desc">Countries where Aon places credit insurance</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100+</span>
+    <div class="stat-desc">Years of combined team expertise in credit risk</div>
+  </div>
+</div>
+
+<!-- WHAT IS IT -->
+<section class="section" id="what">
+  <div class="container">
+    <div class="what-grid">
+      <div class="what-text">
+        <div class="section-tag">Overview</div>
+        <h3>What is Trade Credit Insurance?</h3>
+        <p>When you sell goods or services on credit terms, you take on the risk that your buyer may not pay. Trade credit insurance protects your accounts receivable — covering losses if a customer fails to pay due to insolvency, protracted default, or political risk in cross-border transactions.</p>
+        <p>Aon's Trade Credit Solutions team helps businesses design, place, and manage these insurance programmes, acting as broker and advisor between you and the world's leading credit insurers.</p>
+        <p>Whether you are a domestic-focused business or an international exporter, Aon tailors solutions that fit your risk profile, sector, and growth strategy.</p>
+      </div>
+      <div class="what-visual">
+        <div class="what-visual-label">How it works in principle</div>
+        <div class="what-visual-equation">
+          <div class="eq-box">
+            <div class="eq-box-label">Your Invoice</div>
+            <div class="eq-box-val">$500k</div>
+          </div>
+          <div class="eq-op">+</div>
+          <div class="eq-box">
+            <div class="eq-box-label">Credit Policy</div>
+            <div class="eq-box-val">Aon</div>
+          </div>
+          <div class="eq-op">=</div>
+          <div class="eq-box eq-result">
+            <div class="eq-box-label">Protected</div>
+            <div class="eq-box-val">Up to 90%</div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:1.5rem; line-height:1.6;">If your buyer defaults, the insurer pays out the agreed percentage of your outstanding receivable, net of any deductible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- RISKS COVERED -->
+<section class="section" id="risks">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Core risks covered</div>
+      <h2 class="section-title">What Does a Policy Protect Against?</h2>
+      <p class="section-lead">Aon-placed trade credit policies can cover a range of commercial and political risks that threaten your receivables.</p>
+    </div>
+    <div class="risks-grid">
+      <div class="risk-card">
+        <div class="risk-icon" style="background:#E6F1FB;">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><rect x="2.5" y="5" width="13" height="10" rx="2" stroke="#185FA5" stroke-width="1.3"/><path d="M6 5V4a3 3 0 016 0v1" stroke="#185FA5" stroke-width="1.3" stroke-linecap="round"/><circle cx="9" cy="10" r="1.5" fill="#185FA5"/></svg>
+        </div>
+        <h3>Buyer Insolvency</h3>
+        <p>Coverage triggered when a customer enters bankruptcy, receivership, or formal insolvency proceedings and cannot meet its payment obligations.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon" style="background:#FAEEDA;">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" stroke="#BA7517" stroke-width="1.3"/><path d="M9 5.5V9.5l2.5 1.5" stroke="#BA7517" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Protracted Default</h3>
+        <p>Covers situations where a solvent buyer simply fails to pay within an agreed period — no formal insolvency required for a claim to be triggered.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon" style="background:#E1F5EE;">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" stroke="#0F6E56" stroke-width="1.3"/><path d="M6 9l2.5 2.5L13 6.5" stroke="#0F6E56" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Political Risk</h3>
+        <p>Protection in export transactions where government action, currency inconvertibility, war, or civil unrest prevents the buyer from completing payment.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon" style="background:#EEEDFE;">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#534AB7" stroke-width="1.3"/><path d="M6 9h6M9 6v6" stroke="#534AB7" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Contract Frustration</h3>
+        <p>Covers pre-shipment risks where a contract is cancelled or disrupted before goods are dispatched, leaving you exposed for goods manufactured or ordered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW AON HELPS -->
+<section class="section helps-section" id="how-aon">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Aon</div>
+      <h2 class="section-title">How Aon Adds Value</h2>
+      <p class="section-lead">Aon is not just a policy conduit — it is a strategic risk advisor at every stage of your credit risk journey.</p>
+    </div>
+    <div class="helps-grid">
+      <div class="helps-card">
+        <div class="num">01</div>
+        <h3>Market Access</h3>
+        <p>Aon works with all major credit insurers — Euler Hermes, Atradius, Coface, and specialist Lloyd's markets — securing the best terms for your risk profile.</p>
+      </div>
+      <div class="helps-card">
+        <div class="num">02</div>
+        <h3>Programme Design</h3>
+        <p>Bespoke structuring — whole turnover, key account, or single-buyer policies — tailored precisely to your business model and risk appetite.</p>
+      </div>
+      <div class="helps-card">
+        <div class="num">03</div>
+        <h3>Receivables Financing</h3>
+        <p>Insured receivables can be used as collateral to unlock working capital through bank facilities and alternative lender programmes.</p>
+      </div>
+      <div class="helps-card">
+        <div class="num">04</div>
+        <h3>Credit Intelligence</h3>
+        <p>Access to insurer credit limit decisions and buyer risk assessments to strengthen your own internal credit management practices.</p>
+      </div>
+      <div class="helps-card">
+        <div class="num">05</div>
+        <h3>Claims Advocacy</h3>
+        <p>When a buyer defaults, Aon's dedicated claims team advocates on your behalf to secure swift and fair settlement from the insurer.</p>
+      </div>
+      <div class="helps-card">
+        <div class="num">06</div>
+        <h3>Ongoing Management</h3>
+        <p>Aon monitors limit decisions, manages policy renewals, and helps you adapt coverage as your buyer portfolio and business evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Step by step</div>
+      <h2 class="section-title">How the Process Works</h2>
+      <p class="section-lead">From initial risk assessment to ongoing policy management, Aon is with you at every step.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-step">
+        <div class="step-aside">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-tag">Discovery</div>
+          <h3>Risk Assessment</h3>
+          <p>Aon reviews your receivables book, customer concentration, sectors, geographies, and existing credit controls to build a clear picture of your exposure.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-aside">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-tag">Broking</div>
+          <h3>Market Approach</h3>
+          <p>Aon approaches suitable insurers on your behalf, leveraging its market relationships and data to obtain competitive terms and broad coverage.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-aside">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-tag">Placement</div>
+          <h3>Policy Placement</h3>
+          <p>The most appropriate policy is placed, covering your agreed buyer list with credit limits set by the insurer for each buyer or buyer group.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-aside">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-tag">Servicing</div>
+          <h3>Ongoing Management</h3>
+          <p>Aon monitors limit decisions, manages renewals, and helps you respond proactively to changes in buyer creditworthiness throughout the policy year.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-aside">
+          <div class="step-num">5</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-tag">Recovery</div>
+          <h3>Claims Support</h3>
+          <p>If a buyer defaults, Aon's claims team prepares and submits your claim, engages the insurer, and advocates to secure swift and full settlement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Who it's for</div>
+      <h2 class="section-title">Who Uses Trade Credit Solutions?</h2>
+      <p class="section-lead">Aon's trade credit programmes serve businesses of all sizes across industries — from fast-growing exporters to large multinationals.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-badge"></div>
+        <h3>Exporters & Importers</h3>
+        <p>Businesses trading cross-border who face buyer default risk compounded by political and currency risks in foreign markets.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-badge"></div>
+        <h3>Manufacturers & Distributors</h3>
+        <p>Companies with large receivables books and significant exposure to a handful of major buyers or sectors.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-badge"></div>
+        <h3>Financial Institutions</h3>
+        <p>Banks and lenders using insured receivables as collateral to extend working capital facilities to corporate clients.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-badge"></div>
+        <h3>Mid-Market Corporates</h3>
+        <p>Growing businesses looking to safely extend credit terms to new customers and enter new markets with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Protect Your Receivables?</h2>
+  <p>Speak to an Aon Trade Credit specialist today to explore the right solution for your business.</p>
+  <div class="cta-btns">
+    <a href="https://www.aon.com/en/solutions/credit-solutions/trade-credit" class="btn-primary" target="_blank">Visit Aon Trade Credit</a>
+    <a href="mailto:tradecredit@aon.com" class="btn-outline">Email a Specialist</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Aon plc. All rights reserved. This page is for informational purposes only and does not constitute insurance advice or a binding offer of coverage.</p>
+  <p style="margin-top:6px;"><a href="https://www.aon.com/en/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://www.aon.com/en/terms-of-use" target="_blank">Terms of Use</a></p>
+</footer>
+
+</body>
+</html>
